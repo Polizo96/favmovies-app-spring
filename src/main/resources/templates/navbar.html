@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+</head>
+<body>
+	<div th:fragment="navbar">
+
+		<ul class="nav">
+			<li><a href="/search" th:classappend="${#httpServletRequest.requestURI} == '/search' ? active : ''">Αναζήτηση</a></li>
+			<li><a href="/favorites" th:classappend="${#httpServletRequest.requestURI} == '/favorites' ? active : ''">Οι ταινίες μου</a></li>
+			<li class="dropdown right"><a href="javascript:void(0)"
+				class="dropbtn" th:text="${username}">Dropdown</a>
+				<div class="dropdown-content right-aligned">
+					<a href="/logout">Αποσύνδεση</a>
+				</div></li>
+		</ul>
+
+	</div>
+</body>
+</html>
